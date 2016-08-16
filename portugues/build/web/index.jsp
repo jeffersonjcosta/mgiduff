@@ -3,7 +3,7 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
     <head>
-        <title>Graph Mining | IDUFF</title>
+        <title>Mineração de Grafos | IDUFF</title>
 
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">        
 
@@ -17,55 +17,55 @@
 
                 <li><a href="#">Datasets <span class="arrow">&#9660;</span></a>
                     <ul class="submenu-1"> 
-                        <li><a href="${pageContext.request.contextPath}/datasets/estrutura">Structure</a></li>
+                        <li><a href="${pageContext.request.contextPath}/datasets/estrutura">Estrutura</a></li>
                         <li><a href="${pageContext.request.contextPath}/datasets/download.jsp">Download</a></li>                                       
-                        <li><a href='${pageContext.request.contextPath}/exemplos'>Examples</a></li>
                     </ul>
                 </li>
 
-                <li><a href="#">Graphs <span class="arrow">&#9660;</span></a>
+                <li><a href="#">Grafos <span class="arrow">&#9660;</span></a>
                     <ul class="submenu-1"> 
-                        <li><a href="${pageContext.request.contextPath}/grafos?listarIds=true&menu=grafos&item=gradeCurricular">Program Flowchart Graph</a></li>
-                        <li><a href="${pageContext.request.contextPath}/grafos?listarIds=true&menu=grafos&item=historicos">Historical Curriculum</a></li>                                       
-                        <li><a href="${pageContext.request.contextPath}/grafos?listarIds=true&menu=grafos&item=grafoMedio">Mean Graph</a></li>       
-                        <li><a href="${pageContext.request.contextPath}/grafos?listarIds=true&menu=grafos&item=grafoMediano">Median Graph</a></li>       
-                        <li><a href="${pageContext.request.contextPath}/grafos?listarIds=true&menu=grafos&item=grafoMaximo">Maximum Graph</a></li>       
+                        <li><a href="${pageContext.request.contextPath}/grafos?listarIds=true&menu=grafos&item=gradeCurricular">Grade Curricular</a></li>
+                        <li><a href="${pageContext.request.contextPath}/grafos?listarIds=true&menu=grafos&item=historicos">Hist&oacute;ricos</a></li>                                       
+                        <li><a href="${pageContext.request.contextPath}/grafos?listarIds=true&menu=grafos&item=grafoMedio">Grafo m&eacute;dio</a></li>       
+                        <li><a href="${pageContext.request.contextPath}/grafos?listarIds=true&menu=grafos&item=grafoMediano">Grafo mediano</a></li>       
+                        <li><a href="${pageContext.request.contextPath}/grafos?listarIds=true&menu=grafos&item=grafoMaximo">Grafo m&aacute;ximo</a></li>       
                     </ul>
                 </li>
 
-                <li><a href="#">Results <span class="arrow">&#9660;</span></a>
+                <li><a href="#">Resultados <span class="arrow">&#9660;</span></a>
                     <ul class="submenu-1"> 
-                        <li><a href="#">Longests Paths &rsaquo;</a>                        
+                        <li><a href="#">Caminhos mais longos &rsaquo;</a>                        
                             <ul class="submenu-2">                                                     
-                                <li><a href='${pageContext.request.contextPath}/grafos?listarIds=true&menu=resultados&item=caminhosMaisLongos&subitem=gradeCurricular'>Program Flowchar Graph</a></li>                                                       
-                                <li><a href='${pageContext.request.contextPath}/grafos?listarIds=true&menu=resultados&item=caminhosMaisLongos&subitem=historicos'>Historical Curriculum</a></li>  
-                                <li><a href='${pageContext.request.contextPath}/grafos?listarIds=true&menu=resultados&item=caminhosMaisLongos&subitem=grafoMedio'>Mean Graph</a></li>
-                                <li><a href='${pageContext.request.contextPath}/grafos?listarIds=true&menu=resultados&item=caminhosMaisLongos&subitem=grafoMediano'>Mean Graph</a></li>
-                                <li><a href='${pageContext.request.contextPath}/grafos?listarIds=true&menu=resultados&item=caminhosMaisLongos&subitem=grafoMaximo'>Median Graph</a></li>
-                                <li><a href='${pageContext.request.contextPath}/grafos?listarIds=true&menu=resultados&item=caminhosMaisLongos&subitem=frequentes'>Frequent Critical Paths</a></li>                                                                                                                 
+                                <li><a href='${pageContext.request.contextPath}/grafos?listarIds=true&menu=resultados&item=caminhosMaisLongos&subitem=gradeCurricular'>Grade Curricular</a></li>                                                       
+                                <li><a href='${pageContext.request.contextPath}/grafos?listarIds=true&menu=resultados&item=caminhosMaisLongos&subitem=historicos'>Hist&oacute;ricos</a></li>  
+                                <li><a href='${pageContext.request.contextPath}/grafos?listarIds=true&menu=resultados&item=caminhosMaisLongos&subitem=grafoMedio'>Grafo m&eacute;dio</a></li>
+                                <li><a href='${pageContext.request.contextPath}/grafos?listarIds=true&menu=resultados&item=caminhosMaisLongos&subitem=grafoMediano'>Grafo mediano</a></li>
+                                <li><a href='${pageContext.request.contextPath}/grafos?listarIds=true&menu=resultados&item=caminhosMaisLongos&subitem=grafoMaximo'>Grafo m&aacute;ximo</a></li>
+                                <li><a href='${pageContext.request.contextPath}/grafos?listarIds=true&menu=resultados&item=caminhosMaisLongos&subitem=frequentes'>Mais frequentes</a></li>                                                                                                                 
                             </ul>
                         </li>                                                            
-                        <li><a href="#">Heavier Edges &rsaquo;</a>
+                        <li><a href="#">Arestas mais pesadas &rsaquo;</a>
                             <ul class="submenu-2">
-                                <li><a href="#">Using Longests Paths &rsaquo;</a>
+                                <li><a href="#">Usando os CML &rsaquo;</a>
                                     <ul class="submenu-3">
-                                        <li><a href='${pageContext.request.contextPath}/grafos?listarIds=true&menu=resultados&item=arestasMaisPesadas&subitem=cml&soma=pesos'>Sum of the Costs</a></li>
-                                        <li><a href='${pageContext.request.contextPath}/grafos?listarIds=true&menu=resultados&item=arestasMaisPesadas&subitem=cml&soma=qtd'>Number of Edges</a></li>                                          
+                                        <li><a href='${pageContext.request.contextPath}/grafos?listarIds=true&menu=resultados&item=arestasMaisPesadas&subitem=cml&soma=pesos'>Soma dos Pesos</a></li>
+                                        <li><a href='${pageContext.request.contextPath}/grafos?listarIds=true&menu=resultados&item=arestasMaisPesadas&subitem=cml&soma=qtd'>Quantidade das Arestas</a></li>                                          
                                     </ul>
                                 </li>                                                         
-                                <li><a href="#">Using Historical Curriculum &rsaquo;</a>
+                                <li><a href="#">Usando os históricos &rsaquo;</a>
                                     <ul class="submenu-3">
-                                        <li><a href='${pageContext.request.contextPath}/grafos?listarIds=true&menu=resultados&item=arestasMaisPesadas&subitem=historicos&soma=pesos'>Sum of the Costs</a></li>
-                                        <li><a href='${pageContext.request.contextPath}/grafos?listarIds=true&menu=resultados&item=arestasMaisPesadas&subitem=historicos&soma=qtd'>Number of Edges</a></li>                                          
+                                        <li><a href='${pageContext.request.contextPath}/grafos?listarIds=true&menu=resultados&item=arestasMaisPesadas&subitem=historicos&soma=pesos'>Soma dos Pesos</a></li>
+                                        <li><a href='${pageContext.request.contextPath}/grafos?listarIds=true&menu=resultados&item=arestasMaisPesadas&subitem=historicos&soma=qtd'>Quantidade das Arestas</a></li>                                          
                                     </ul>
                                 </li>                                                                                     
                             </ul>
                         </li>
                     </ul>
                 </li>
-               
-                <li><a href='${pageContext.request.contextPath}/sobre.jsp'>About</a></li>
-                <li><a href='${pageContext.request.contextPath}/contato.jsp'>Contact</a></li>             
+
+                <li><a href='${pageContext.request.contextPath}/exemplos'>Exemplos</a></li>
+                <li><a href='${pageContext.request.contextPath}/sobre.jsp'>Sobre</a></li>
+                <li><a href='${pageContext.request.contextPath}/contato.jsp'>Contato</a></li>             
             </ul>
         </div>
 
@@ -75,22 +75,22 @@
                 &rsaquo;&rsaquo; Inputs                
                 <hr/>
             </h2>
-                        
-            For more information about the files to be sent, please, acess the menu <b><a href='${pageContext.request.contextPath}/exemplos'>Datasets - Examples</a></b>
+            
+            Para mais informa&ccedil;&otilde;es sobre os arquivos que dever&atilde;o ser enviados, por favor, acesse o menu <b><a href='${pageContext.request.contextPath}/exemplos'>Exemplos</a></b>
 
             <br /><br /><br />
             
             <form method="post" action="upload" enctype="multipart/form-data">               
                 <fieldset>
-                    <legend>&nbsp;Program Flowchar&nbsp;</legend>
+                    <legend>&nbsp;Grade Curricular&nbsp;</legend>
 
-                    <strong>File 1 - Disciplines and Prerequisite</strong>  
+                    <strong>Arquivo 1 - Disciplinas e Pr&eacute;-requisitos</strong>  
                     <br />
                     <input type="file" name="preRequisitos" /> 
 
                     <br /><br />
 
-                    <strong>File 2 - Equivalences</strong>                           
+                    <strong>Arquivo 2 - Equival&ecirc;ncias</strong>                           
                     <br />
                     <input type="file" name="equivalencias" /> 
 
@@ -99,27 +99,27 @@
                 <br /><br />
 
                 <fieldset>
-                    <legend>&nbsp;Historical Curriculum&nbsp;</legend>
+                    <legend>&nbsp;Hist&oacute;ricos&nbsp;</legend>
 
-                    <strong>File 3 - Students's accompaniments</strong>
+                    <strong>Arquivo 3 - Acompanhamentos dos Alunos</strong>
                     <br />
                     <input type="file" name="acompanhamentos" />                  
 
                     <br /><br />
 
-                    <strong>File 4 - Historical</strong>
+                    <strong>Arquivo 4 - Hist&oacute;ricos</strong>
                     <br />
                     <input type="file" name="historicos"/>                                                          
                 </fieldset> 
 
                 <br />
 
-                <input type="submit" name="enviar" value="Send"/>
-                <input type="reset" name="limpar" value="Cancel"/>   
+                <input type="submit" name="enviar" value="Enviar"/>
+                <input type="reset" name="limpar" value="Cancelar"/>   
 
                 <c:if test="${erroExtensao}">                                        
                     <br /><br />
-                    <span class='erro'>Only TXT or CSV files are accepted!</span>                    
+                    <span class='erro'>Apenas arquivos do tipo TXT ou CSV são aceitos!</span>                    
                 </c:if>     
 
                 <c:if test="${uploadOK}"> 

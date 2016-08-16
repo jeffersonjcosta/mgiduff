@@ -4,8 +4,8 @@ e | id do vértice de origem | código da disciplina de origem (pré-requisito) 
 
 Onde: 
 
-As linhas com a letra 'g' indicam o início de um novo grafo. Para os grafos da grade curricular, o id do grago é o id do currículo. No caso do histórico escolar, o id do grafo é formado pelo id do aluno mais o id do currículo que ele cursou;
+As linhas com a letra 'g' indicam o início de um novo grafo. Para os grafos da grade curricular, o id do grafo é o id do currículo. No caso do histórico escolar, o id do grafo é formado pelo id do aluno mais o id do currículo que ele cursou;
 
 As linhas que iniciam com a letra 'v' representam os vértices do grafo, e são compostas por um id numérico, pelo código da disciplina e pelo período da mesma;
 
-As linhas com a letra 'e' rerpesentam as arestas do grafo. Uma aresta é representada da seguinte maneira: pela letra 'e', indicando o incício de uma aresta (edge); pelo o id do vértice de origem; pelo código da disciplina de origem (pré-requisito), o mesmo código que aparece na grade curricular do curso e nos históricos dos alunos; pelo id do vértice de destino; pelo código da disciplina de origem; e, por fim, pelo peso da aresta. Esse peso é sempre 1 (um) nos grafos das grades curriculares e, no caso dos grafos dos históricos dos alunos, esse peso será a quantidade de vezes que o aluno cursou a aresta.
+As linhas com a letra 'e' rerpesentam as arestas do grafo. Uma aresta é representada da seguinte maneira: pela letra 'e', indicando o início de uma aresta (edge); pelo o id do vértice de origem; pelo código da disciplina de origem (pré-requisito), o mesmo código que aparece na grade curricular do curso e nos históricos dos alunos; pelo id do vértice de destino; pelo código da disciplina de origem; e, por fim, pelo peso da aresta. Esse peso é sempre 1 (um) nos grafos das grades curriculares e, no caso dos grafos dos históricos dos alunos, esse peso será a quantidade de vezes que o aluno cursou a aresta.

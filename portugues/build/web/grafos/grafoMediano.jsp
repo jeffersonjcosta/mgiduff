@@ -3,7 +3,7 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
     <head>
-        <title>Graph Mining | IDUFF</title>
+        <title>Mineração de Grafos | IDUFF</title>
 
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">        
 
@@ -13,93 +13,93 @@
     <body>
         <div id="menu_superior">
             <ul class="menu">
-                <li class="current-item"><a href="${pageContext.request.contextPath}">Inputs</a></li>
+                <li><a href="${pageContext.request.contextPath}">Inputs</a></li>
 
                 <li><a href="#">Datasets <span class="arrow">&#9660;</span></a>
                     <ul class="submenu-1"> 
-                        <li><a href="${pageContext.request.contextPath}/datasets/estrutura">Structure</a></li>
+                        <li><a href="${pageContext.request.contextPath}/datasets/estrutura">Estrutura</a></li>
                         <li><a href="${pageContext.request.contextPath}/datasets/download.jsp">Download</a></li>                                       
-                        <li><a href='${pageContext.request.contextPath}/exemplos'>Examples</a></li>
                     </ul>
                 </li>
 
-                <li><a href="#">Graphs <span class="arrow">&#9660;</span></a>
+                <li class="current-item"><a href="#">Grafos <span class="arrow">&#9660;</span></a>
                     <ul class="submenu-1"> 
-                        <li><a href="${pageContext.request.contextPath}/grafos?listarIds=true&menu=grafos&item=gradeCurricular">Program Flowchart Graph</a></li>
-                        <li><a href="${pageContext.request.contextPath}/grafos?listarIds=true&menu=grafos&item=historicos">Historical Curriculum</a></li>                                       
-                        <li><a href="${pageContext.request.contextPath}/grafos?listarIds=true&menu=grafos&item=grafoMedio">Mean Graph</a></li>       
-                        <li><a href="${pageContext.request.contextPath}/grafos?listarIds=true&menu=grafos&item=grafoMediano">Median Graph</a></li>       
-                        <li><a href="${pageContext.request.contextPath}/grafos?listarIds=true&menu=grafos&item=grafoMaximo">Maximum Graph</a></li>       
+                        <li><a href="${pageContext.request.contextPath}/grafos?listarIds=true&menu=grafos&item=gradeCurricular">Grade Curricular</a></li>
+                        <li><a href="${pageContext.request.contextPath}/grafos?listarIds=true&menu=grafos&item=historicos">Hist&oacute;ricos</a></li>                                       
+                        <li><a href="${pageContext.request.contextPath}/grafos?listarIds=true&menu=grafos&item=grafoMedio">Grafo m&eacute;dio</a></li>       
+                        <li><a href="${pageContext.request.contextPath}/grafos?listarIds=true&menu=grafos&item=grafoMediano">Grafo mediano</a></li>       
+                        <li><a href="${pageContext.request.contextPath}/grafos?listarIds=true&menu=grafos&item=grafoMaximo">Grafo m&aacute;ximo</a></li>  
                     </ul>
                 </li>
-
-                <li><a href="#">Results <span class="arrow">&#9660;</span></a>
+ 
+                <li><a href="#">Resultados <span class="arrow">&#9660;</span></a>
                     <ul class="submenu-1"> 
-                        <li><a href="#">Longests Paths &rsaquo;</a>                        
+                        <li><a href="#">Caminhos mais longos &rsaquo;</a>                        
                             <ul class="submenu-2">                                                     
-                                <li><a href='${pageContext.request.contextPath}/grafos?listarIds=true&menu=resultados&item=caminhosMaisLongos&subitem=gradeCurricular'>Program Flowchar Graph</a></li>                                                       
-                                <li><a href='${pageContext.request.contextPath}/grafos?listarIds=true&menu=resultados&item=caminhosMaisLongos&subitem=historicos'>Historical Curriculum</a></li>  
-                                <li><a href='${pageContext.request.contextPath}/grafos?listarIds=true&menu=resultados&item=caminhosMaisLongos&subitem=grafoMedio'>Mean Graph</a></li>
-                                <li><a href='${pageContext.request.contextPath}/grafos?listarIds=true&menu=resultados&item=caminhosMaisLongos&subitem=grafoMediano'>Mean Graph</a></li>
-                                <li><a href='${pageContext.request.contextPath}/grafos?listarIds=true&menu=resultados&item=caminhosMaisLongos&subitem=grafoMaximo'>Median Graph</a></li>
-                                <li><a href='${pageContext.request.contextPath}/grafos?listarIds=true&menu=resultados&item=caminhosMaisLongos&subitem=frequentes'>Frequent Critical Paths</a></li>                                                                                                                 
+                                <li><a href='${pageContext.request.contextPath}/grafos?listarIds=true&menu=resultados&item=caminhosMaisLongos&subitem=gradeCurricular'>Grade Curricular</a></li>                                                       
+                                <li><a href='${pageContext.request.contextPath}/grafos?listarIds=true&menu=resultados&item=caminhosMaisLongos&subitem=historicos'>Hist&oacute;ricos</a></li>  
+                                <li><a href='${pageContext.request.contextPath}/grafos?listarIds=true&menu=resultados&item=caminhosMaisLongos&subitem=grafoMedio'>Grafo m&eacute;dio</a></li>
+                                <li><a href='${pageContext.request.contextPath}/grafos?listarIds=true&menu=resultados&item=caminhosMaisLongos&subitem=grafoMediano'>Grafo mediano</a></li>
+                                <li><a href='${pageContext.request.contextPath}/grafos?listarIds=true&menu=resultados&item=caminhosMaisLongos&subitem=grafoMaximo'>Grafo m&aacute;ximo</a></li>
+                                <li><a href='${pageContext.request.contextPath}/grafos?listarIds=true&menu=resultados&item=caminhosMaisLongos&subitem=frequentes'>Mais frequentes</a></li>                                                                                                                 
                             </ul>
                         </li>                                                            
-                        <li><a href="#">Heavier Edges &rsaquo;</a>
+                        <li><a href="#">Arestas mais pesadas &rsaquo;</a>
                             <ul class="submenu-2">
-                                <li><a href="#">Using Longests Paths &rsaquo;</a>
+                                <li><a href="#">Usando os CML &rsaquo;</a>
                                     <ul class="submenu-3">
-                                        <li><a href='${pageContext.request.contextPath}/grafos?listarIds=true&menu=resultados&item=arestasMaisPesadas&subitem=cml&soma=pesos'>Sum of the Costs</a></li>
-                                        <li><a href='${pageContext.request.contextPath}/grafos?listarIds=true&menu=resultados&item=arestasMaisPesadas&subitem=cml&soma=qtd'>Number of Edges</a></li>                                          
+                                        <li><a href='${pageContext.request.contextPath}/grafos?listarIds=true&menu=resultados&item=arestasMaisPesadas&subitem=cml&soma=pesos'>Soma dos Pesos</a></li>
+                                        <li><a href='${pageContext.request.contextPath}/grafos?listarIds=true&menu=resultados&item=arestasMaisPesadas&subitem=cml&soma=qtd'>Quantidade das Arestas</a></li>                                          
                                     </ul>
                                 </li>                                                         
-                                <li><a href="#">Using Historical Curriculum &rsaquo;</a>
+                                <li><a href="#">Usando os históricos &rsaquo;</a>
                                     <ul class="submenu-3">
-                                        <li><a href='${pageContext.request.contextPath}/grafos?listarIds=true&menu=resultados&item=arestasMaisPesadas&subitem=historicos&soma=pesos'>Sum of the Costs</a></li>
-                                        <li><a href='${pageContext.request.contextPath}/grafos?listarIds=true&menu=resultados&item=arestasMaisPesadas&subitem=historicos&soma=qtd'>Number of Edges</a></li>                                          
+                                        <li><a href='${pageContext.request.contextPath}/grafos?listarIds=true&menu=resultados&item=arestasMaisPesadas&subitem=historicos&soma=pesos'>Soma dos Pesos</a></li>
+                                        <li><a href='${pageContext.request.contextPath}/grafos?listarIds=true&menu=resultados&item=arestasMaisPesadas&subitem=historicos&soma=qtd'>Quantidade das Arestas</a></li>                                          
                                     </ul>
                                 </li>                                                                                     
                             </ul>
                         </li>
                     </ul>
                 </li>
-               
-                <li><a href='${pageContext.request.contextPath}/sobre.jsp'>About</a></li>
-                <li><a href='${pageContext.request.contextPath}/contato.jsp'>Contact</a></li>             
+
+                <li><a href='${pageContext.request.contextPath}/exemplos'>Exemplos</a></li>
+                <li><a href='${pageContext.request.contextPath}/sobre.jsp'>Sobre</a></li>
+                <li><a href='${pageContext.request.contextPath}/contato.jsp'>Contato</a></li>    
             </ul>
         </div>
 
         <div class="conteudo">   
             
             <h2 style="line-height: 5px;">
-                &rsaquo;&rsaquo; Graphs - Median Graph
+                &rsaquo;&rsaquo; Grafos - Grafo mediano
                 <hr/>
             </h2>
             
-            Choose the curriculum that you want to view the graph.          
-            <br />             
-            The median graph has the same structure (vertices and edges) of the program flowchart graph, but the weight of its edges is achieved through the median number of students taking each edge.            
+            Escolha o curr&iacute;culo para o qual deseja visualizar o grafo mediano.            
             <br />
-            Total of generated graphs: <b>${idsAlunosSize}</b>
+            O grafo mediano possui a mesma estrutura (v&eacute;rtices e arestas) do grafo da grade curricular, por&eacute;m o peso das suas arestas &eacute; conseguido atrav&eacute;s da mediana da quantidade de alunos que cursaram cada aresta.
+            <br />
+            Total de grafos gerados: <b>${idsAlunosSize}</b>
             <br /><br />            
             <table width="60%" border='1'>               
                 <tr style="background-color: #e2e2e2;">                    
-                    <td><b>Currculum</b></td>
-                    <td><b>Median Graph</b></td>
+                    <td><b>Curr&iacute;culo</b></td>
+                    <td><b>Grafo mediano</b></td>
                 </tr>
                 <c:forEach var="idCurr" items="${idsCurriculos}">                                                                         
                     <tr>
                         <td width="20%">${idCurr}</td>                      
                         <td>
-                            <a href="exibirGrafo?idGrafo=${idCurr}&tipo=grafoMediano&gephi=true" title="View with Gephi JS (without the edges's costs)">View with Gephi</a>                           
+                            <a href="exibirGrafo?idGrafo=${idCurr}&tipo=grafoMediano&gephi=true" title="Visualizar grafo mediano com Gephi JS (sem peso das arestas)">Visualizar com Gephi</a>                           
                             |
-                            <a href="exibirGrafo?idGrafo=${idCurr}&tipo=grafoMediano&graphViz=true" title="View with GraphViz (with the edges's costs)">View with GraphViz</a>                           
+                            <a href="exibirGrafo?idGrafo=${idCurr}&tipo=grafoMediano&graphViz=true" title="Visualizar grafo mediano com GraphViz/Vis.JS (com peso das arestas)">Visualizar com GraphViz</a>                           
                             |
-                            <a href="baixarGrafo?idGrafo=${idCurr}&tipo=grafoMediano&gexf=true" title="Download GEXF file - Gephi's extension">Download GEXF</a>
+                            <a href="baixarGrafo?idGrafo=${idCurr}&tipo=grafoMediano&gexf=true" title="Baixar arquivo GEXF - extensão do Gephi">Baixar GEXF</a>
                             |
-                            <a href="baixarGrafo?idGrafo=${idCurr}&tipo=grafoMediano&dot=true" title="Download DOT file">Download DOT/GV</a>
+                            <a href="baixarGrafo?idGrafo=${idCurr}&tipo=grafoMediano&dot=true" title="Baixar arquivo em DOT Language - linguagem do GraphViz">Baixar DOT/GV</a>
                             |
-                            <a href="baixarGrafo?idGrafo=${idCurr}&tipo=grafoMediano&txt=true" title="Download the graph with the same structure of the datasets">Download TXT</a>                                                       
+                            <a href="baixarGrafo?idGrafo=${idCurr}&tipo=grafoMediano&txt=true" title="Baixar grafo m&eacute;dio com a mesma estrutura dos datasets">Baixar TXT</a>                                                       
                         </td>
                     </tr>
                 </c:forEach> 

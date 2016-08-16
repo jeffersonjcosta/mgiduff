@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<gexf xmlns="http://www.gexf.net/1.1draft" version="1.1" xmlns:viz="http://www.gexf.net/1.1draft/viz" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.gexf.net/1.1draft http://www.gexf.net/1.1draft/gexf.xsd">
+<meta>
+<description>Caminho Mais Longo Currículo: 42.01.001</description>
+</meta>
+<graph defaultedgetype="directed" timeformat="double" mode="dynamic">
+<nodes>
+<node id="Ingresso" label="Ingresso">
+<attvalues></attvalues>
+<viz:size value="2"></viz:size>
+<viz:position x="15" y="0"></viz:position>
+<viz:color r="70" g="110" b="160"></viz:color>
+</node>
+<node id="GAN06118" label="GAN06118">
+<attvalues></attvalues>
+<viz:size value="2"></viz:size>
+<viz:position x="30" y="0"></viz:position>
+<viz:color r="70" g="110" b="160"></viz:color>
+</node>
+<node id="GMA06074" label="GMA06074">
+<attvalues></attvalues>
+<viz:size value="2"></viz:size>
+<viz:position x="45" y="0"></viz:position>
+<viz:color r="70" g="110" b="160"></viz:color>
+</node>
+<node id="GMA06071" label="GMA06071">
+<attvalues></attvalues>
+<viz:size value="2"></viz:size>
+<viz:position x="60" y="0"></viz:position>
+<viz:color r="70" g="110" b="160"></viz:color>
+</node>
+<node id="GMA04004" label="GMA04004">
+<attvalues></attvalues>
+<viz:size value="2"></viz:size>
+<viz:position x="75" y="0"></viz:position>
+<viz:color r="70" g="110" b="160"></viz:color>
+</node>
+<node id="GFI05102" label="GFI05102">
+<attvalues></attvalues>
+<viz:size value="2"></viz:size>
+<viz:position x="90" y="0"></viz:position>
+<viz:color r="70" g="110" b="160"></viz:color>
+</node>
+<node id="GFI05103" label="GFI05103">
+<attvalues></attvalues>
+<viz:size value="2"></viz:size>
+<viz:position x="105" y="0"></viz:position>
+<viz:color r="70" g="110" b="160"></viz:color>
+</node>
+<node id="TEM04096" label="TEM04096">
+<attvalues></attvalues>
+<viz:size value="2"></viz:size>
+<viz:position x="120" y="0"></viz:position>
+<viz:color r="70" g="110" b="160"></viz:color>
+</node>
+<node id="TEP04017" label="TEP04017">
+<attvalues></attvalues>
+<viz:size value="2"></viz:size>
+<viz:position x="135" y="0"></viz:position>
+<viz:color r="70" g="110" b="160"></viz:color>
+</node>
+<node id="TEP04022" label="TEP04022">
+<attvalues></attvalues>
+<viz:size value="2"></viz:size>
+<viz:position x="150" y="0"></viz:position>
+<viz:color r="70" g="110" b="160"></viz:color>
+</node>
+<node id="Conclusao" label="Conclusao">
+<attvalues></attvalues>
+<viz:size value="2"></viz:size>
+<viz:position x="165" y="0"></viz:position>
+<viz:color r="70" g="110" b="160"></viz:color>
+</node>
+</nodes>
+<edges>
+<edge id="0" source="Ingresso" target="GAN06118" label="1">
+<attvalues></attvalues>
+</edge>
+<edge id="1" source="GAN06118" target="GMA06074" label="1">
+<attvalues></attvalues>
+</edge>
+<edge id="2" source="GMA06074" target="GMA06071" label="1">
+<attvalues></attvalues>
+</edge>
+<edge id="3" source="GMA06071" target="GMA04004" label="1">
+<attvalues></attvalues>
+</edge>
+<edge id="4" source="GMA04004" target="GFI05102" label="1">
+<attvalues></attvalues>
+</edge>
+<edge id="5" source="GFI05102" target="GFI05103" label="1">
+<attvalues></attvalues>
+</edge>
+<edge id="6" source="GFI05103" target="TEM04096" label="1">
+<attvalues></attvalues>
+</edge>
+<edge id="7" source="TEM04096" target="TEP04017" label="1">
+<attvalues></attvalues>
+</edge>
+<edge id="8" source="TEP04017" target="TEP04022" label="1">
+<attvalues></attvalues>
+</edge>
+<edge id="9" source="TEP04022" target="Conclusao" label="1">
+<attvalues></attvalues>
+</edge>
+</edges>
+</graph>
+</gexf>

@@ -40,8 +40,8 @@
                                 <li><a href='${pageContext.request.contextPath}/grafos?listarIds=true&menu=resultados&item=caminhosMaisLongos&subitem=gradeCurricular'>Program Flowchar Graph</a></li>                                                       
                                 <li><a href='${pageContext.request.contextPath}/grafos?listarIds=true&menu=resultados&item=caminhosMaisLongos&subitem=historicos'>Historical Curriculum</a></li>  
                                 <li><a href='${pageContext.request.contextPath}/grafos?listarIds=true&menu=resultados&item=caminhosMaisLongos&subitem=grafoMedio'>Mean Graph</a></li>
-                                <li><a href='${pageContext.request.contextPath}/grafos?listarIds=true&menu=resultados&item=caminhosMaisLongos&subitem=grafoMediano'>Mean Graph</a></li>
-                                <li><a href='${pageContext.request.contextPath}/grafos?listarIds=true&menu=resultados&item=caminhosMaisLongos&subitem=grafoMaximo'>Median Graph</a></li>
+                                <li><a href='${pageContext.request.contextPath}/grafos?listarIds=true&menu=resultados&item=caminhosMaisLongos&subitem=grafoMediano'>Median Graph</a></li>
+                                <li><a href='${pageContext.request.contextPath}/grafos?listarIds=true&menu=resultados&item=caminhosMaisLongos&subitem=grafoMaximo'>Maximum Graph</a></li>
                                 <li><a href='${pageContext.request.contextPath}/grafos?listarIds=true&menu=resultados&item=caminhosMaisLongos&subitem=frequentes'>Frequent Critical Paths</a></li>                                                                                                                 
                             </ul>
                         </li>                                                            
@@ -125,11 +125,7 @@
                 <c:if test="${uploadOK}"> 
                     <br /><br />
                     <fieldset class="aviso">
-                        Arquivos enviados com sucesso.
-                        <br />
-                        Para baixar os datasets criados <a href="${pageContext.request.contextPath}/datasets/download.jsp">clique aqui</a> ou vá até o menu Datasets.
-                        <br />
-                        Para outras funcionalidades, navegue pelo menu superior do sistema.
+                        Successfully uploaded files.                      
                     </fieldset>
                 </c:if>  
             </form>

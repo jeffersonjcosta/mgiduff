@@ -3,7 +3,7 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>Graph Mining | IDUFF</title>
+        <title>Mineração de Grafos | IDUFF</title>
 
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 
