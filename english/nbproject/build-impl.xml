@@ -357,7 +357,7 @@ or ant -Dj2ee.platform.classpath=&lt;server_classpath&gt; (where no properties f
                 <mkdir dir="${empty.dir}"/>
                 <javac debug="@{debug}" deprecation="${javac.deprecation}" destdir="@{destdir}" encoding="${source.encoding}" excludes="@{excludes}" includeantruntime="false" includes="@{includes}" source="${javac.source}" srcdir="@{srcdir}" target="${javac.target}">
                     <src>
-                        <dirset dir="@{gensrcdir}" erroronmissingdir="false">
+                        <dirset dir="@{gensrcdir}" errorronmissingdir="false">
                             <include name="*"/>
                         </dirset>
                     </src>
@@ -432,7 +432,7 @@ or ant -Dj2ee.platform.classpath=&lt;server_classpath&gt; (where no properties f
             <attribute default="" name="testmethods"/>
             <element name="customize" optional="true"/>
             <sequential>
-                <junit dir="${basedir}" errorproperty="tests.failed" failureproperty="tests.failed" fork="true" showoutput="true" tempdir="${java.io.tmpdir}">
+                <junit dir="${basedir}" errorrproperty="tests.failed" failureproperty="tests.failed" fork="true" showoutput="true" tempdir="${java.io.tmpdir}">
                     <test methods="@{testmethods}" name="@{testincludes}" todir="${build.test.results.dir}"/>
                     <syspropertyset>
                         <propertyref prefix="test-sys-prop."/>
@@ -455,7 +455,7 @@ or ant -Dj2ee.platform.classpath=&lt;server_classpath&gt; (where no properties f
             <element name="customize" optional="true"/>
             <sequential>
                 <property name="run.jvmargs.ide" value=""/>
-                <junit dir="${basedir}" errorproperty="tests.failed" failureproperty="tests.failed" fork="true" showoutput="true" tempdir="${build.dir}">
+                <junit dir="${basedir}" errorrproperty="tests.failed" failureproperty="tests.failed" fork="true" showoutput="true" tempdir="${build.dir}">
                     <batchtest todir="${build.test.results.dir}">
                         <fileset dir="${test.src.dir}" excludes="@{excludes},${excludes}" includes="@{includes}">
                             <filename name="@{testincludes}"/>
@@ -573,7 +573,7 @@ or ant -Dj2ee.platform.classpath=&lt;server_classpath&gt; (where no properties f
             <attribute default="" name="testmethods"/>
             <element name="customize" optional="true"/>
             <sequential>
-                <junit dir="${basedir}" errorproperty="tests.failed" failureproperty="tests.failed" fork="true" showoutput="true" tempdir="${java.io.tmpdir}">
+                <junit dir="${basedir}" errorrproperty="tests.failed" failureproperty="tests.failed" fork="true" showoutput="true" tempdir="${java.io.tmpdir}">
                     <test methods="@{testmethods}" name="@{testincludes}" todir="${build.test.results.dir}"/>
                     <syspropertyset>
                         <propertyref prefix="test-sys-prop."/>
@@ -598,7 +598,7 @@ or ant -Dj2ee.platform.classpath=&lt;server_classpath&gt; (where no properties f
             <element name="customize" optional="true"/>
             <sequential>
                 <property name="run.jvmargs.ide" value=""/>
-                <junit dir="${basedir}" errorproperty="tests.failed" failureproperty="tests.failed" fork="true" showoutput="true" tempdir="${build.dir}">
+                <junit dir="${basedir}" errorrproperty="tests.failed" failureproperty="tests.failed" fork="true" showoutput="true" tempdir="${build.dir}">
                     <batchtest todir="${build.test.results.dir}">
                         <fileset dir="${test.src.dir}" excludes="@{excludes},${excludes}" includes="@{includes}">
                             <filename name="@{testincludes}"/>
@@ -936,9 +936,9 @@ exists or setup the property manually. For example like this:
     <target depends="init,deps-jar,-pre-pre-compile,-pre-compile-single,-do-compile-single,-post-compile-single" name="compile-single"/>
     <property name="jspc.schemas" value="/resources/schemas/"/>
     <property name="jspc.dtds" value="/resources/dtds/"/>
-    <target depends="compile" description="Test compile JSP pages to expose compilation errors." if="do.compile.jsps" name="compile-jsps">
+    <target depends="compile" description="Test compile JSP pages to expose compilation errorrs." if="do.compile.jsps" name="compile-jsps">
         <mkdir dir="${build.generated.dir}/src"/>
-        <java classname="org.netbeans.modules.web.project.ant.JspC" failonerror="true" fork="true">
+        <java classname="org.netbeans.modules.web.project.ant.JspC" failonerrorr="true" fork="true">
             <arg value="-uriroot"/>
             <arg file="${basedir}/${build.web.dir}"/>
             <arg value="-d"/>
@@ -958,7 +958,7 @@ exists or setup the property manually. For example like this:
     <target depends="compile" if="jsp.includes" name="-do-compile-single-jsp">
         <fail unless="javac.jsp.includes">Must select some files in the IDE or set javac.jsp.includes</fail>
         <mkdir dir="${build.generated.dir}/src"/>
-        <java classname="org.netbeans.modules.web.project.ant.JspCSingle" failonerror="true" fork="true">
+        <java classname="org.netbeans.modules.web.project.ant.JspCSingle" failonerrorr="true" fork="true">
             <arg value="-uriroot"/>
             <arg file="${basedir}/${build.web.dir}"/>
             <arg value="-d"/>
@@ -1270,7 +1270,7 @@ exists or setup the property manually. For example like this:
                 <path path="${j2ee.platform.classpath}"/>
             </classpath>
         </nbprofiledirect>
-        <junit dir="${profiler.info.dir}" errorproperty="tests.failed" failureproperty="tests.failed" fork="true" jvm="${profiler.info.jvm}" showoutput="true">
+        <junit dir="${profiler.info.dir}" errorrproperty="tests.failed" failureproperty="tests.failed" fork="true" jvm="${profiler.info.jvm}" showoutput="true">
             <env key="${profiler.info.pathvar}" path="${profiler.info.agentpath}:${profiler.current.path}"/>
             <jvmarg value="${profiler.info.jvmargs.agent}"/>
             <jvmarg line="${profiler.info.jvmargs}"/>
@@ -1319,14 +1319,14 @@ exists or setup the property manually. For example like this:
             -->
     <target depends="init" if="have.sources" name="javadoc-build">
         <mkdir dir="${dist.javadoc.dir}"/>
-        <javadoc additionalparam="${javadoc.additionalparam}" author="${javadoc.author}" charset="UTF-8" destdir="${dist.javadoc.dir}" docencoding="UTF-8" encoding="${javadoc.encoding.used}" failonerror="true" noindex="${javadoc.noindex}" nonavbar="${javadoc.nonavbar}" notree="${javadoc.notree}" private="${javadoc.private}" source="${javac.source}" splitindex="${javadoc.splitindex}" use="${javadoc.use}" useexternalfile="true" version="${javadoc.version}" windowtitle="${javadoc.windowtitle}">
+        <javadoc additionalparam="${javadoc.additionalparam}" author="${javadoc.author}" charset="UTF-8" destdir="${dist.javadoc.dir}" docencoding="UTF-8" encoding="${javadoc.encoding.used}" failonerrorr="true" noindex="${javadoc.noindex}" nonavbar="${javadoc.nonavbar}" notree="${javadoc.notree}" private="${javadoc.private}" source="${javac.source}" splitindex="${javadoc.splitindex}" use="${javadoc.use}" useexternalfile="true" version="${javadoc.version}" windowtitle="${javadoc.windowtitle}">
             <classpath>
                 <path path="${javac.classpath}:${j2ee.platform.classpath}"/>
             </classpath>
             <fileset dir="${src.dir}" excludes="${excludes}" includes="${includes}">
                 <filename name="**/*.java"/>
             </fileset>
-            <fileset dir="${build.generated.sources.dir}" erroronmissingdir="false">
+            <fileset dir="${build.generated.sources.dir}" errorronmissingdir="false">
                 <include name="**/*.java"/>
             </fileset>
         </javadoc>
@@ -1334,7 +1334,7 @@ exists or setup the property manually. For example like this:
             <fileset dir="${src.dir}" excludes="${excludes}" includes="${includes}">
                 <filename name="**/doc-files/**"/>
             </fileset>
-            <fileset dir="${build.generated.sources.dir}" erroronmissingdir="false">
+            <fileset dir="${build.generated.sources.dir}" errorronmissingdir="false">
                 <include name="**/doc-files/**"/>
             </fileset>
         </copy>

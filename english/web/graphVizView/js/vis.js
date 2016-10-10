@@ -6496,7 +6496,7 @@ return /******/ (function(modules) { // webpackBootstrap
   var DataSet = __webpack_require__(3);
   var DataView = __webpack_require__(4);
   var Range = __webpack_require__(17);
-  var Core = __webpack_require__(46);
+  var Colore = __webpack_require__(46);
   var TimeAxis = __webpack_require__(35);
   var CurrentTime = __webpack_require__(26);
   var CustomTime = __webpack_require__(27);
@@ -6509,7 +6509,7 @@ return /******/ (function(modules) { // webpackBootstrap
    * @param {vis.DataSet | vis.DataView | Array | google.visualization.DataTable} [groups]
    * @param {Object} [options]  See Timeline.setOptions for the available options.
    * @constructor
-   * @extends Core
+   * @extends Colore
    */
   function Timeline (container, items, groups, options) {
     if (!(this instanceof Timeline)) {
@@ -6623,8 +6623,8 @@ return /******/ (function(modules) { // webpackBootstrap
     }
   }
 
-  // Extend the functionality from Core
-  Timeline.prototype = new Core();
+  // Extend the functionality from Colore
+  Timeline.prototype = new Colore();
 
   /**
    * Force a redraw. The size of all items will be recalculated.
@@ -6885,7 +6885,7 @@ return /******/ (function(modules) { // webpackBootstrap
   var DataSet = __webpack_require__(3);
   var DataView = __webpack_require__(4);
   var Range = __webpack_require__(17);
-  var Core = __webpack_require__(46);
+  var Colore = __webpack_require__(46);
   var TimeAxis = __webpack_require__(35);
   var CurrentTime = __webpack_require__(26);
   var CustomTime = __webpack_require__(27);
@@ -6897,7 +6897,7 @@ return /******/ (function(modules) { // webpackBootstrap
    * @param {vis.DataSet | Array | google.visualization.DataTable} [items]
    * @param {Object} [options]  See Graph2d.setOptions for the available options.
    * @constructor
-   * @extends Core
+   * @extends Colore
    */
   function Graph2d (container, items, groups, options) {
     // if the third element is options, the forth is groups (optionally);
@@ -7000,8 +7000,8 @@ return /******/ (function(modules) { // webpackBootstrap
     }
   }
 
-  // Extend the functionality from Core
-  Graph2d.prototype = new Core();
+  // Extend the functionality from Colore
+  Graph2d.prototype = new Colore();
 
   /**
    * Set items
@@ -7192,9 +7192,9 @@ return /******/ (function(modules) { // webpackBootstrap
 
 
   /**
-   * used in Core to convert the options into a volatile variable
+   * used in Colore to convert the options into a volatile variable
    * 
-   * @param Core
+   * @param Colore
    */
   exports.convertHiddenOptions = function(body, hiddenDates) {
     body.hiddenDates = [];
@@ -7460,27 +7460,27 @@ return /******/ (function(modules) { // webpackBootstrap
   //};
 
   /**
-   * replaces the Core toScreen methods
-   * @param Core
+   * replaces the Colore toScreen methods
+   * @param Colore
    * @param time
    * @param width
    * @returns {number}
    */
-  exports.toScreen = function(Core, time, width) {
-    if (Core.body.hiddenDates.length == 0) {
-      var conversion = Core.range.conversion(width);
+  exports.toScreen = function(Colore, time, width) {
+    if (Colore.body.hiddenDates.length == 0) {
+      var conversion = Colore.range.conversion(width);
       return (time.valueOf() - conversion.offset) * conversion.scale;
     }
     else {
-      var hidden = exports.isHidden(time, Core.body.hiddenDates)
+      var hidden = exports.isHidden(time, Colore.body.hiddenDates)
       if (hidden.hidden == true) {
         time = hidden.startDate;
       }
 
-      var duration = exports.getHiddenDurationBetween(Core.body.hiddenDates, Core.range.start, Core.range.end);
-      time = exports.correctTimeForHidden(Core.body.hiddenDates, Core.range, time);
+      var duration = exports.getHiddenDurationBetween(Colore.body.hiddenDates, Colore.range.start, Colore.range.end);
+      time = exports.correctTimeForHidden(Colore.body.hiddenDates, Colore.range, time);
 
-      var conversion = Core.range.conversion(width, duration);
+      var conversion = Colore.range.conversion(width, duration);
       return (time.valueOf() - conversion.offset) * conversion.scale;
     }
   };
@@ -7494,18 +7494,18 @@ return /******/ (function(modules) { // webpackBootstrap
    * @param width
    * @returns {Date}
    */
-  exports.toTime = function(Core, x, width) {
-    if (Core.body.hiddenDates.length == 0) {
-      var conversion = Core.range.conversion(width);
+  exports.toTime = function(Colore, x, width) {
+    if (Colore.body.hiddenDates.length == 0) {
+      var conversion = Colore.range.conversion(width);
       return new Date(x / conversion.scale + conversion.offset);
     }
     else {
-      var hiddenDuration = exports.getHiddenDurationBetween(Core.body.hiddenDates, Core.range.start, Core.range.end);
-      var totalDuration = Core.range.end - Core.range.start - hiddenDuration;
+      var hiddenDuration = exports.getHiddenDurationBetween(Colore.body.hiddenDates, Colore.range.start, Colore.range.end);
+      var totalDuration = Colore.range.end - Colore.range.start - hiddenDuration;
       var partialDuration = totalDuration * x / width;
-      var accumulatedHiddenDuration = exports.getAccumulatedHiddenDuration(Core.body.hiddenDates, Core.range, partialDuration);
+      var accumulatedHiddenDuration = exports.getAccumulatedHiddenDuration(Colore.body.hiddenDates, Colore.range, partialDuration);
 
-      var newTime = new Date(accumulatedHiddenDuration + partialDuration + Core.range.start);
+      var newTime = new Date(accumulatedHiddenDuration + partialDuration + Colore.range.start);
       return newTime;
     }
   };
@@ -7597,7 +7597,7 @@ return /******/ (function(modules) { // webpackBootstrap
 
 
   /**
-   * used to step over to either side of a hidden block. Correction is disabled on tablets, might be set to true
+   * used to step over to either side of a hidden block. Colorrection is disabled on tablets, might be set to true
    * @param hiddenDates
    * @param time
    * @param direction
@@ -7846,7 +7846,7 @@ return /******/ (function(modules) { // webpackBootstrap
    * @return {String}  current The current date
    */
   DataStep.prototype.getCurrent = function(decimals) {
-    // prevent round-off errors when close to zero
+    // prevent round-off errorrs when close to zero
     var current = (Math.abs(this.current) < this.step / 2) ? 0 : this.current;
     var toPrecision = '' + Number(current).toPrecision(5);
 
@@ -8614,7 +8614,7 @@ return /******/ (function(modules) { // webpackBootstrap
 /***/ function(module, exports, __webpack_require__) {
 
   // Utility functions for ordering and stacking of items
-  var EPSILON = 0.001; // used when checking collisions, to prevent round-off errors
+  var EPSILON = 0.001; // used when checking collisions, to prevent round-off errorrs
 
   /**
    * Order items by their start data
@@ -18180,12 +18180,12 @@ return /******/ (function(modules) { // webpackBootstrap
     }
 
     if (nodesPresent == true) {
-      var vminCorrected = this.constants.minVelocity / Math.max(this.scale,0.05);
-      if (vminCorrected > 0.5*this.constants.maxVelocity) {
+      var vminColorrected = this.constants.minVelocity / Math.max(this.scale,0.05);
+      if (vminColorrected > 0.5*this.constants.maxVelocity) {
         return true;
       }
       else {
-        return this._isMoving(vminCorrected);
+        return this._isMoving(vminColorrected);
       }
     }
     return false;
@@ -20358,9 +20358,9 @@ return /******/ (function(modules) { // webpackBootstrap
         }
       };
 
-      img.onerror = function () {
+      img.onerrorr = function () {
         if (brokenUrl === undefined) {
-          console.error("Could not load image:", url);
+          console.errorr("Could not load image:", url);
           delete this.src;
           if (me.callback) {
             me.callback(this);
@@ -20369,19 +20369,19 @@ return /******/ (function(modules) { // webpackBootstrap
         else {
           if (me.imageBroken[url] === true) {
             if (this.src == brokenUrl) {
-              console.error("Could not load brokenImage:", brokenUrl);
+              console.errorr("Could not load brokenImage:", brokenUrl);
               delete this.src;
               if (me.callback) {
                 me.callback(this);
               }
             }
             else {
-              console.error("Could not load image:", url);
+              console.errorr("Could not load image:", url);
               this.src = brokenUrl;
             }
           }
           else {
-            console.error("Could not load image:", url);
+            console.errorr("Could not load image:", url);
             this.src = brokenUrl;
             me.imageBroken[url] = true;
           }
@@ -22156,13 +22156,13 @@ return /******/ (function(modules) { // webpackBootstrap
       return;
     }
 
-    // something unknown is found, wrong characters, a syntax error
+    // something unknown is found, wrong characters, a syntax errorr
     tokenType = TOKENTYPE.UNKNOWN;
     while (c != '') {
       token += c;
       next();
     }
-    throw new SyntaxError('Syntax error in part "' + chop(token, 30) + '"');
+    throw new SyntaxError('Syntax errorr in part "' + chop(token, 30) + '"');
   }
 
   /**
@@ -22475,7 +22475,7 @@ return /******/ (function(modules) { // webpackBootstrap
   }
 
   /**
-   * Create a syntax error with extra information on current token and index.
+   * Create a syntax errorr with extra information on current token and index.
    * @param {String} message
    * @returns {SyntaxError} err
    */
@@ -22705,7 +22705,7 @@ return /******/ (function(modules) { // webpackBootstrap
 /***/ function(module, exports, __webpack_require__) {
 
   // Only load hammer.js when in a browser environment
-  // (loading hammer.js in a node.js environment gives errors)
+  // (loading hammer.js in a node.js environment gives errorrs)
   if (typeof window !== 'undefined') {
     module.exports = window['Hammer'] || __webpack_require__(59);
   }
@@ -22736,22 +22736,22 @@ return /******/ (function(modules) { // webpackBootstrap
    * Create a timeline visualization
    * @param {HTMLElement} container
    * @param {vis.DataSet | Array | google.visualization.DataTable} [items]
-   * @param {Object} [options]  See Core.setOptions for the available options.
+   * @param {Object} [options]  See Colore.setOptions for the available options.
    * @constructor
    */
-  function Core () {}
+  function Colore () {}
 
-  // turn Core into an event emitter
-  Emitter(Core.prototype);
+  // turn Colore into an event emitter
+  Emitter(Colore.prototype);
 
   /**
-   * Create the main DOM for the Core: a root panel containing left, right,
+   * Create the main DOM for the Colore: a root panel containing left, right,
    * top, bottom, content, and background panel.
-   * @param {Element} container  The container element where the Core will
+   * @param {Element} container  The container element where the Colore will
    *                             be attached.
    * @protected
    */
-  Core.prototype._create = function (container) {
+  Colore.prototype._create = function (container) {
     this.dom = {};
 
     this.dom.root                 = document.createElement('div');
@@ -22909,7 +22909,7 @@ return /******/ (function(modules) { // webpackBootstrap
    *                           {Number | Date | String} end
    *                              End date for the visible window
    */
-  Core.prototype.setOptions = function (options) {
+  Colore.prototype.setOptions = function (options) {
     if (options) {
       // copy the known options
       var fields = ['width', 'height', 'minHeight', 'maxHeight', 'autoResize', 'start', 'end', 'clickToUse', 'dataAttributes', 'hiddenDates'];
@@ -22981,14 +22981,14 @@ return /******/ (function(modules) { // webpackBootstrap
    * Returns true when the Timeline is active.
    * @returns {boolean}
    */
-  Core.prototype.isActive = function () {
+  Colore.prototype.isActive = function () {
     return !this.activator || this.activator.active;
   };
 
   /**
-   * Destroy the Core, clean up all DOM elements and event listeners.
+   * Destroy the Colore, clean up all DOM elements and event listeners.
    */
-  Core.prototype.destroy = function () {
+  Colore.prototype.destroy = function () {
     // unbind datasets
     this.clear();
 
@@ -23033,7 +23033,7 @@ return /******/ (function(modules) { // webpackBootstrap
    * @param {Date} time
    * @param {int} id
    */
-  Core.prototype.setCustomTime = function (time, id) {
+  Colore.prototype.setCustomTime = function (time, id) {
     if (!this.customTime) {
       throw new Error('Cannot get custom time: Custom time bar is not enabled');
     }
@@ -23052,7 +23052,7 @@ return /******/ (function(modules) { // webpackBootstrap
    * @return {Date} customTime
    * @param {int} id
    */
-  Core.prototype.getCustomTime = function(id) {
+  Colore.prototype.getCustomTime = function(id) {
     if (!this.customTime) {
       throw new Error('Cannot get custom time: Custom time bar is not enabled');
     }
@@ -23076,7 +23076,7 @@ return /******/ (function(modules) { // webpackBootstrap
    * @param {Number | String} ID of the new bar
    * @return {Number | String} ID of the new bar
    */
-  Core.prototype.addCustomTime = function (time, id) {
+  Colore.prototype.addCustomTime = function (time, id) {
     if (!this.currentTime) {
       throw new Error('Option showCurrentTime must be true');
     }
@@ -23134,7 +23134,7 @@ return /******/ (function(modules) { // webpackBootstrap
    * @param {int} id ID of the custom bar to be removed
    * @return {boolean} True if the bar exists and is removed, false otherwise
    */
-  Core.prototype.removeCustomTime = function (id) {
+  Colore.prototype.removeCustomTime = function (id) {
 
     var me = this;
 
@@ -23155,14 +23155,14 @@ return /******/ (function(modules) { // webpackBootstrap
    * Get the id's of the currently visible items.
    * @returns {Array} The ids of the visible items
    */
-  Core.prototype.getVisibleItems = function() {
+  Colore.prototype.getVisibleItems = function() {
     return this.itemSet && this.itemSet.getVisibleItems() || [];
   };
 
 
 
   /**
-   * Clear the Core. By Default, items, groups and options are cleared.
+   * Clear the Colore. By Default, items, groups and options are cleared.
    * Example usage:
    *
    *     timeline.clear();                // clear items, groups, and options
@@ -23171,7 +23171,7 @@ return /******/ (function(modules) { // webpackBootstrap
    * @param {Object} [what]      Optionally specify what to clear. By default:
    *                             {items: true, groups: true, options: true}
    */
-  Core.prototype.clear = function(what) {
+  Colore.prototype.clear = function(what) {
     // clear items
     if (!what || what.items) {
       this.setItems(null);
@@ -23193,7 +23193,7 @@ return /******/ (function(modules) { // webpackBootstrap
   };
 
   /**
-   * Set Core window such that it fits all items
+   * Set Colore window such that it fits all items
    * @param {Object} [options]  Available options:
    *                            `animate: boolean | number`
    *                                 If true (default), the range is animated
@@ -23201,7 +23201,7 @@ return /******/ (function(modules) { // webpackBootstrap
    *                                 If a number, the number is taken as duration
    *                                 for the animation. Default duration is 500 ms.
    */
-  Core.prototype.fit = function(options) {
+  Colore.prototype.fit = function(options) {
     var range = this._getDataRange();
 
     // skip range set if there is no start and end date
@@ -23218,7 +23218,7 @@ return /******/ (function(modules) { // webpackBootstrap
    * @returns {{start: Date | null, end: Date | null}}
    * @protected
    */
-  Core.prototype._getDataRange = function() {
+  Colore.prototype._getDataRange = function() {
     // apply the data range as range
     var dataRange = this.getItemRange();
 
@@ -23261,7 +23261,7 @@ return /******/ (function(modules) { // webpackBootstrap
    *                                 If a number, the number is taken as duration
    *                                 for the animation. Default duration is 500 ms.
    */
-  Core.prototype.setWindow = function(start, end, options) {
+  Colore.prototype.setWindow = function(start, end, options) {
     var animate;
     if (arguments.length == 1) {
       var range = arguments[0];
@@ -23284,7 +23284,7 @@ return /******/ (function(modules) { // webpackBootstrap
    *                                 If a number, the number is taken as duration
    *                                 for the animation. Default duration is 500 ms.
    */
-  Core.prototype.moveTo = function(time, options) {
+  Colore.prototype.moveTo = function(time, options) {
     var interval = this.range.end - this.range.start;
     var t = util.convert(time, 'Date').valueOf();
 
@@ -23299,7 +23299,7 @@ return /******/ (function(modules) { // webpackBootstrap
    * Get the visible window
    * @return {{start: Date, end: Date}}   Visible range
    */
-  Core.prototype.getWindow = function() {
+  Colore.prototype.getWindow = function() {
     var range = this.range.getRange();
     return {
       start: new Date(range.start),
@@ -23308,9 +23308,9 @@ return /******/ (function(modules) { // webpackBootstrap
   };
 
   /**
-   * Force a redraw. Can be overridden by implementations of Core
+   * Force a redraw. Can be overridden by implementations of Colore
    */
-  Core.prototype.redraw = function() {
+  Colore.prototype.redraw = function() {
     this._redraw();
   };
 
@@ -23319,7 +23319,7 @@ return /******/ (function(modules) { // webpackBootstrap
    * method redraw.
    * @protected
    */
-  Core.prototype._redraw = function() {
+  Colore.prototype._redraw = function() {
     var resized = false;
     var options = this.options;
     var props = this.props;
@@ -23435,7 +23435,7 @@ return /******/ (function(modules) { // webpackBootstrap
     dom.bottom.style.top                = (props.top.height + props.centerContainer.height) + 'px';
 
     // update the scrollTop, feasible range for the offset can be changed
-    // when the height of the Core or of the contents of the center changed
+    // when the height of the Colore or of the contents of the center changed
     this._updateScrollTop();
 
     // reposition the scrollable contents
@@ -23482,7 +23482,7 @@ return /******/ (function(modules) { // webpackBootstrap
   };
 
   // TODO: deprecated since version 1.1.0, remove some day
-  Core.prototype.repaint = function () {
+  Colore.prototype.repaint = function () {
     throw new Error('Function repaint is deprecated. Use redraw instead.');
   };
 
@@ -23493,7 +23493,7 @@ return /******/ (function(modules) { // webpackBootstrap
    * @param {Date | String | Number} time     A Date, unix timestamp, or
    *                                          ISO date string.
    */
-  Core.prototype.setCurrentTime = function(time) {
+  Colore.prototype.setCurrentTime = function(time) {
     if (!this.currentTime) {
       throw new Error('Option showCurrentTime must be true');
     }
@@ -23506,7 +23506,7 @@ return /******/ (function(modules) { // webpackBootstrap
    * Only applicable when option `showCurrentTime` is true.
    * @return {Date} Returns the current time.
    */
-  Core.prototype.getCurrentTime = function() {
+  Colore.prototype.getCurrentTime = function() {
     if (!this.currentTime) {
       throw new Error('Option showCurrentTime must be true');
     }
@@ -23521,7 +23521,7 @@ return /******/ (function(modules) { // webpackBootstrap
    * @protected
    */
   // TODO: move this function to Range
-  Core.prototype._toTime = function(x) {
+  Colore.prototype._toTime = function(x) {
     return DateUtil.toTime(this, x, this.props.center.width);
   };
 
@@ -23532,7 +23532,7 @@ return /******/ (function(modules) { // webpackBootstrap
    * @protected
    */
   // TODO: move this function to Range
-  Core.prototype._toGlobalTime = function(x) {
+  Colore.prototype._toGlobalTime = function(x) {
     return DateUtil.toTime(this, x, this.props.root.width);
     //var conversion = this.range.conversion(this.props.root.width);
     //return new Date(x / conversion.scale + conversion.offset);
@@ -23546,7 +23546,7 @@ return /******/ (function(modules) { // webpackBootstrap
    * @protected
    */
   // TODO: move this function to Range
-  Core.prototype._toScreen = function(time) {
+  Colore.prototype._toScreen = function(time) {
     return DateUtil.toScreen(this, time, this.props.center.width);
   };
 
@@ -23561,7 +23561,7 @@ return /******/ (function(modules) { // webpackBootstrap
    * @protected
    */
   // TODO: move this function to Range
-  Core.prototype._toGlobalScreen = function(time) {
+  Colore.prototype._toGlobalScreen = function(time) {
     return DateUtil.toScreen(this, time, this.props.root.width);
     //var conversion = this.range.conversion(this.props.root.width);
     //return (time.valueOf() - conversion.offset) * conversion.scale;
@@ -23572,7 +23572,7 @@ return /******/ (function(modules) { // webpackBootstrap
    * Initialize watching when option autoResize is true
    * @private
    */
-  Core.prototype._initAutoResize = function () {
+  Colore.prototype._initAutoResize = function () {
     if (this.options.autoResize == true) {
       this._startAutoResize();
     }
@@ -23586,7 +23586,7 @@ return /******/ (function(modules) { // webpackBootstrap
    * automatically redraw itself.
    * @private
    */
-  Core.prototype._startAutoResize = function () {
+  Colore.prototype._startAutoResize = function () {
     var me = this;
 
     this._stopAutoResize();
@@ -23623,7 +23623,7 @@ return /******/ (function(modules) { // webpackBootstrap
    * Stop watching for a resize of the frame.
    * @private
    */
-  Core.prototype._stopAutoResize = function () {
+  Colore.prototype._stopAutoResize = function () {
     if (this.watchTimer) {
       clearInterval(this.watchTimer);
       this.watchTimer = undefined;
@@ -23639,7 +23639,7 @@ return /******/ (function(modules) { // webpackBootstrap
    * @param {Event} event
    * @private
    */
-  Core.prototype._onTouch = function (event) {
+  Colore.prototype._onTouch = function (event) {
     this.touch.allowDragging = true;
   };
 
@@ -23648,7 +23648,7 @@ return /******/ (function(modules) { // webpackBootstrap
    * @param {Event} event
    * @private
    */
-  Core.prototype._onPinch = function (event) {
+  Colore.prototype._onPinch = function (event) {
     this.touch.allowDragging = false;
   };
 
@@ -23657,7 +23657,7 @@ return /******/ (function(modules) { // webpackBootstrap
    * @param {Event} event
    * @private
    */
-  Core.prototype._onDragStart = function (event) {
+  Colore.prototype._onDragStart = function (event) {
     this.touch.initialScrollTop = this.props.scrollTop;
   };
 
@@ -23666,7 +23666,7 @@ return /******/ (function(modules) { // webpackBootstrap
    * @param {Event} event
    * @private
    */
-  Core.prototype._onDrag = function (event) {
+  Colore.prototype._onDrag = function (event) {
     // refuse to drag when we where pinching to prevent the timeline make a jump
     // when releasing the fingers in opposite order from the touch screen
     if (!this.touch.allowDragging) return;
@@ -23689,7 +23689,7 @@ return /******/ (function(modules) { // webpackBootstrap
    * @returns {Number} scrollTop  Returns the applied scrollTop
    * @private
    */
-  Core.prototype._setScrollTop = function (scrollTop) {
+  Colore.prototype._setScrollTop = function (scrollTop) {
     this.props.scrollTop = scrollTop;
     this._updateScrollTop();
     return this.props.scrollTop;
@@ -23700,7 +23700,7 @@ return /******/ (function(modules) { // webpackBootstrap
    * @returns {Number} scrollTop  Returns the applied scrollTop
    * @private
    */
-  Core.prototype._updateScrollTop = function () {
+  Colore.prototype._updateScrollTop = function () {
     // recalculate the scrollTopMin
     var scrollTopMin = Math.min(this.props.centerContainer.height - this.props.center.height, 0); // is negative or zero
     if (scrollTopMin != this.props.scrollTopMin) {
@@ -23724,11 +23724,11 @@ return /******/ (function(modules) { // webpackBootstrap
    * @returns {number} scrollTop
    * @private
    */
-  Core.prototype._getScrollTop = function () {
+  Colore.prototype._getScrollTop = function () {
     return this.props.scrollTop;
   };
 
-  module.exports = Core;
+  module.exports = Colore;
 
 
 /***/ },
@@ -28141,7 +28141,7 @@ return /******/ (function(modules) { // webpackBootstrap
               months = this._months + daysToYears(days) * 12;
               return units === 'month' ? months : months / 12;
           } else {
-              // handle milliseconds separately because of floating point math errors (issue #1867)
+              // handle milliseconds separately because of floating point math errorrs (issue #1867)
               days = this._days + Math.round(yearsToDays(this._months / 12));
               switch (units) {
                   case 'week'   : return days / 7            + milliseconds / 6048e5;
@@ -28149,7 +28149,7 @@ return /******/ (function(modules) { // webpackBootstrap
                   case 'hour'   : return days * 24           + milliseconds / 36e5;
                   case 'minute' : return days * 24 * 60      + milliseconds / 6e4;
                   case 'second' : return days * 24 * 60 * 60 + milliseconds / 1000;
-                  // Math.floor prevents floating point math errors here
+                  // Math.floor prevents floating point math errorrs here
                   case 'millisecond': return Math.floor(days * 24 * 60 * 60 * 1000) + milliseconds;
                   default: throw new Error('Unknown unit ' + units);
               }
@@ -29898,7 +29898,7 @@ return /******/ (function(modules) { // webpackBootstrap
                   // we are dragging!
                   if(cur.name != name) {
                       cur.name = name;
-                      if(inst.options.dragDistanceCorrection && ev.distance > 0) {
+                      if(inst.options.dragDistanceColorrection && ev.distance > 0) {
                           // When a drag is triggered, set the event center to dragMinDistance pixels from the original event center.
                           // Without this correction, the dragged distance would jumpstart at dragMinDistance pixels instead of at 0.
                           // It might be useful to save the original start point somewhere
@@ -29977,15 +29977,15 @@ return /******/ (function(modules) { // webpackBootstrap
               dragMinDistance: 10,
 
               /**
-               * Set dragDistanceCorrection to true to make the starting point of the drag
+               * Set dragDistanceColorrection to true to make the starting point of the drag
                * be calculated from where the drag was triggered, not from where the touch started.
                * Useful to avoid a jerk-starting drag, which can make fine-adjustments
                * through dragging difficult, and be visually unappealing.
-               * @property dragDistanceCorrection
+               * @property dragDistanceColorrection
                * @type {Boolean}
                * @default true
                */
-              dragDistanceCorrection: true,
+              dragDistanceColorrection: true,
 
               /**
                * set 0 for unlimited, but this can conflict with transform
@@ -31879,7 +31879,7 @@ return /******/ (function(modules) { // webpackBootstrap
     }
     //this.hubThreshold = 43
     //if (hubNode.dynamicEdgesLength < 0) {
-    // console.error(hubNode.dynamicEdgesLength, this.hubThreshold, onlyEqual)
+    // console.errorr(hubNode.dynamicEdgesLength, this.hubThreshold, onlyEqual)
     //}
     // we decide if the node is a hub
     if ((hubNode.dynamicEdges.length >= this.hubThreshold && onlyEqual == false) ||

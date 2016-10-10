@@ -1,0 +1,16 @@
+The inputs files must be in TXT or CSV format;
+
+The values must be separated by ';' (semicolon);
+
+The datasets generated will have a structure based on gSpan (YAN and HAN, 2002) - as can be seen in section 'Datasets -> Structure' (in MGIDUFF)                        
+For the generation of graphs of the program flowchar, should be sent a file (CSV or TXT) containing disciplines with their respective prerequisites;
+
+It is important to note that the disciplines not compulsory and those that do not have prerequisites should not be present at this file
+
+In the case of co-requirements, the discipline more theoretical workload should appear as a prerequisite of the discipline with workload practical.
+
+For the generation of the historical graphs of students, is necessary the sending onf two files: one with the accompaniment of students (semester per semester) and another with historical
+
+In the file of accompaniment of students is necessary include the identification of the student, the situation in each semester, the year / semester and your curriculum in that semester;
+
+The historical of the student should contain your id, the year and semester, the discipline that he studied this semester, the grade in the discipline, the note of the additional verification (if necessary), the frequency and the situation of the student in the discipline;            

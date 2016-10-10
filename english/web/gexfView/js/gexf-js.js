@@ -172,8 +172,8 @@ var GexfJS = {
             "undirLinks" : "Links sem dire&ccedil;&atilde;o:",
             "lensOn" : "Desativar modo lente",
             "lensOff" : "Ativar modo lente",
-            "edgeOn" : "Exibir arestas",
-            "edgeOff" : "Ocultar arestas",
+            "edgeOn" : "Exibir edges",
+            "edgeOff" : "Ocultar edges",
             "zoomIn" : "Ampliar",
             "zoomOut" : "Reduzir",
             "browserErr" : 'Seu navagador n&atilde;o pode exibir essa p&aacute;gina corretamente.<br />Recomendamos que utilize a &uacute;ltima vers&atilde;o do<a href="http://www.mozilla.com/" target="_blank">Firefox</a> ou do <a href="http://www.google.com/chrome/" target="_blank">Chrome</a>'
